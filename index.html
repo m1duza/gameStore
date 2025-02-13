@@ -26,17 +26,19 @@
             redirectUrl: 'https://game-store-m1duzas-projects.vercel.app/auth/callback',
             responseMode: VKID.ConfigResponseMode.Callback,
             source: VKID.ConfigSource.LOWCODE,
-            scope: '', 
+            scope: '', // Заполните нужными доступами по необходимости
           });
     
-          const oneTap = new VKID.OneTap();
+          const oAuth = new VKID.OAuthList();
     
-          oneTap.render({
+          oAuth.render({
             container: document.currentScript.parentElement,
-            showAlternativeLogin: true
+            oauthList: [
+              'vkid'
+            ]
           })
           .on(VKID.WidgetEvents.ERROR, vkidOnError)
-          .on(VKID.OneTapInternalEvents.LOGIN_SUCCESS, function (payload) {
+          .on(VKID.OAuthListInternalEvents.LOGIN_SUCCESS, function (payload) {
             const code = payload.code;
             const deviceId = payload.device_id;
     
