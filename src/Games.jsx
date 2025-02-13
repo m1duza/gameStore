@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './Games.css'
-import VKComments from "./VKComments";
+import VKComments from "./Comments.jsx";
 const Games = () => {
   const [position, setPosition] = useState(0)
   const [selectImage, setSelectImage] = useState('https://www.youtube.com/embed/SWVPA1lMJQc')
@@ -96,6 +96,9 @@ const Games = () => {
           <div className="main_left_side_bottom_line"></div>
         </div>
         <div className="block_for_ad"></div>
+        <div id="vk_comments">
+        <VKComments />
+      </div>
       </div>
       
       <div className="right_side_section">
@@ -105,9 +108,7 @@ const Games = () => {
         <button className='main_button_play'>play</button>
       </div>
 
-      <div id="vk_comments">
-      <VKComments />
-      </div>
+      
     </section>
     
   )
