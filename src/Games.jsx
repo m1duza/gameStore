@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './Games.css'
-
+import VKComments from "./VKComments";
 const Games = () => {
   const [position, setPosition] = useState(0)
   const [selectImage, setSelectImage] = useState('https://www.youtube.com/embed/SWVPA1lMJQc')
@@ -103,6 +103,10 @@ const Games = () => {
         <p className="main_text_about_game">About the game</p>
         <p className="main_text_tags">platformer • 2D</p>
         <button className='main_button_play'>play</button>
+      </div>
+
+      <div id="vk_comments">
+      <VKComments />
       </div>
     </section>
     
