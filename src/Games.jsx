@@ -99,7 +99,7 @@ const Games = () => {
         <div id="vk_comments">
           <VKComments />
         </div>
-        <div >привет</div>
+        <div className='hi' >привет</div>
       </div>
       
       <div className="right_side_section">
