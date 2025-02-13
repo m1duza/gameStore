@@ -98,7 +98,8 @@ const Games = () => {
         <div className="block_for_ad"></div>
         <div id="vk_comments">
         <VKComments />
-      </div>
+        </div>
+        <div>привет</div>
       </div>
       
       <div className="right_side_section">
