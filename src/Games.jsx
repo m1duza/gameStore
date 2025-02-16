@@ -96,12 +96,12 @@ const Games = () => {
           <div className="main_left_side_bottom_line"></div>
         </div>
         <div className="block_for_ad"></div>
-        <button className='log-in-button' id='log-in-in-vk'>log-in</button>
+        <button className='log-in-button' id='log-in-in-vk'>log in</button>
       
         <VKComments />
 
 
-        <div className='hi' >привет</div>
+       
       </div>
       
       <div className="right_side_section">
