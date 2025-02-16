@@ -96,7 +96,7 @@ const Games = () => {
           <div className="main_left_side_bottom_line"></div>
         </div>
         <div className="block_for_ad"></div>
-        <button className='' id='log-in-in-vk'></button>
+        <button className='log-in-button' id='log-in-in-vk'>log-in</button>
       
         <VKComments />
 
