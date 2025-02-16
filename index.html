@@ -9,6 +9,8 @@
       
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="yandex-verification" content="4fe59f35a2a10e5f" />
+    <script defer src="https://unpkg.com/@vkid/sdk@<3.0.0/dist-sdk/umd/index.js"></script>
+
     <title>Vite + React</title>
   </head>
   <body>
@@ -16,7 +18,7 @@
 
     <div id="root"></div>
     <div>
-      <script src="https://unpkg.com/@vkid/sdk@<3.0.0/dist-sdk/umd/index.js"></script>
+     
       <script type="text/javascript">
         if ('VKIDSDK' in window) {
           const VKID = window.VKIDSDK;
@@ -24,28 +26,29 @@
           VKID.Config.init({
             app: 53052429,
             redirectUrl: 'https://game-store-m1duzas-projects.vercel.app/auth/callback',
-            responseMode: VKID.ConfigResponseMode.Callback,
+            responseMode: VKID.ConfigResponseMode.Query,
             source: VKID.ConfigSource.LOWCODE,
             scope: '', // Заполните нужными доступами по необходимости
           });
     
           const oAuth = new VKID.OAuthList();
     
-          oAuth.render({
-            container: document.currentScript.parentElement,
-            oauthList: [
-              'vkid'
-            ]
-          })
-          .on(VKID.WidgetEvents.ERROR, vkidOnError)
-          .on(VKID.OAuthListInternalEvents.LOGIN_SUCCESS, function (payload) {
-            const code = payload.code;
-            const deviceId = payload.device_id;
-    
-            VKID.Auth.exchangeCode(code, deviceId)
-              .then(vkidOnSuccess)
-              .catch(vkidOnError);
-          });
+          console.log("Инициализация VKID OAuth...");
+oAuth.render({
+  container: document.currentScript.parentElement,
+  oauthList: ['vkid']
+})
+.on(VKID.WidgetEvents.ERROR, vkidOnError)
+.on(VKID.OAuthListInternalEvents.LOGIN_SUCCESS, function (payload) {
+  console.log("Успешный логин:", payload);
+  const code = payload.code;
+  const deviceId = payload.device_id;
+
+  VKID.Auth.exchangeCode(code, deviceId)
+    .then(vkidOnSuccess)
+    .catch(vkidOnError);
+});
+
         
           function vkidOnSuccess(data) {
             // Обработка полученного результата
