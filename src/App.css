@@ -120,3 +120,8 @@ p {
     margin-inline-end: 0px;
     unicode-bidi: isolate;
 }
+html{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
