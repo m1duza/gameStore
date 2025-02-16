@@ -45,12 +45,12 @@
                 source: VKID.ConfigSource.LOWCODE,
                 scope: '', // Здесь можно указать нужные доступы
             });
-
+            const vkButton = document.getElementById("log-in-in-vk");
             // Создание OAuth кнопки
             const oAuth = new VKID.OAuthList();
 
             oAuth.render({
-                container: document.getElementById("vkid-container"), // Привязываем к div
+                container: vkButton, // Привязываем к div
                 oauthList: ['vkid']
             })
             .on(VKID.WidgetEvents.ERROR, vkidOnError)
