@@ -20,11 +20,11 @@ function App() {
   };
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 0); // Если прокрутил хоть чуть-чуть, `true`
+      setScrolled(window.scrollY > 0)
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll); // Удаляем слушатель при размонтировании
+    return () => window.removeEventListener("scroll", handleScroll)
   }, []);
   return (
     
