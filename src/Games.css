@@ -181,13 +181,7 @@ h2{
     border-radius: 10px;
     margin-top: 40px;
 }
-.log_in{
-    width: 360px;
-    height: 60px;
-    background-color: var(--blue-color);
-    color: var(--white-color);
-    font-family: "Mitr", sans-serif;
-}
+
 .log-in-button{
     width: 300px;
     height: 60px;
@@ -201,3 +195,9 @@ h2{
     margin-top: 20px;
     margin-bottom: 10px;
 }
+#vk_comments {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    min-height: 200px;
+  }
