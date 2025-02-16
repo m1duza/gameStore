@@ -16,47 +16,47 @@
 
     <div id="root"></div>
     <div>
-  <script src="https://unpkg.com/@vkid/sdk@<3.0.0/dist-sdk/umd/index.js"></script>
-  <script type="text/javascript">
-    if ('VKIDSDK' in window) {
-      const VKID = window.VKIDSDK;
-
-      VKID.Config.init({
-        app: 53052429,
-        redirectUrl: 'https://game-store-m1duzas-projects.vercel.app/auth/callback',
-        responseMode: VKID.ConfigResponseMode.Callback,
-        source: VKID.ConfigSource.LOWCODE,
-        scope: '', // Заполните нужными доступами по необходимости
-      });
-
-      const oAuth = new VKID.OAuthList();
-
-      oAuth.render({
-        container: document.currentScript.parentElement,
-        oauthList: [
-          'vkid'
-        ]
-      })
-      .on(VKID.WidgetEvents.ERROR, vkidOnError)
-      .on(VKID.OAuthListInternalEvents.LOGIN_SUCCESS, function (payload) {
-        const code = payload.code;
-        const deviceId = payload.device_id;
-
-        VKID.Auth.exchangeCode(code, deviceId)
-          .then(vkidOnSuccess)
-          .catch(vkidOnError);
-      });
+      <script src="https://unpkg.com/@vkid/sdk@<3.0.0/dist-sdk/umd/index.js"></script>
+      <script type="text/javascript">
+        if ('VKIDSDK' in window) {
+          const VKID = window.VKIDSDK;
     
-      function vkidOnSuccess(data) {
-        // Обработка полученного результата
-      }
+          VKID.Config.init({
+            app: 53052429,
+            redirectUrl: 'https://game-store-m1duzas-projects.vercel.app/auth/callback',
+            responseMode: VKID.ConfigResponseMode.Callback,
+            source: VKID.ConfigSource.LOWCODE,
+            scope: '', // Заполните нужными доступами по необходимости
+          });
     
-      function vkidOnError(error) {
-        // Обработка ошибки
-      }
-    }
-  </script>
-</div>
+          const oAuth = new VKID.OAuthList();
+    
+          oAuth.render({
+            container: document.currentScript.parentElement,
+            oauthList: [
+              'vkid'
+            ]
+          })
+          .on(VKID.WidgetEvents.ERROR, vkidOnError)
+          .on(VKID.OAuthListInternalEvents.LOGIN_SUCCESS, function (payload) {
+            const code = payload.code;
+            const deviceId = payload.device_id;
+    
+            VKID.Auth.exchangeCode(code, deviceId)
+              .then(vkidOnSuccess)
+              .catch(vkidOnError);
+          });
+        
+          function vkidOnSuccess(data) {
+            // Обработка полученного результата
+          }
+        
+          function vkidOnError(error) {
+            // Обработка ошибки
+          }
+        }
+      </script>
+    </div>
     
 <script type="module" src="/src/main.jsx"></script>.
   </body>
