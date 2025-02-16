@@ -13,6 +13,7 @@ const Games = () => {
 
   return(
     <section className='games_section'>
+      <div className="games_section_common_block">
       <div className="left_side_main">
         <div className="main_game_screen">
         {selectImage.includes("youtube.com") ? (
@@ -110,8 +111,10 @@ const Games = () => {
         <p className="main_text_tags">platformer • 2D</p>
         <button className='main_button_play'>play</button>
       </div>
-
-      
+</div>
+      <footer>
+        <p className="q">q</p>
+      </footer>
     </section>
     
   )
