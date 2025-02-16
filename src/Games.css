@@ -181,3 +181,10 @@ h2{
     border-radius: 10px;
     margin-top: 40px;
 }
+.log_in{
+    width: 360px;
+    height: 60px;
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    font-family: "Mitr", sans-serif;
+}
