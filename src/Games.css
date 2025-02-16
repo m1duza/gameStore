@@ -7,7 +7,7 @@ body {
 .games_section{
     background-color: var(--backgraund-color);
     
-    height: 100vh;
+
     display: flex;
     padding: 200px 320px 0 320px
     
