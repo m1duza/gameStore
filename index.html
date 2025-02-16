@@ -31,21 +31,22 @@
     
           const oAuth = new VKID.OAuthList();
     
-          oAuth.render({
-            container: document.currentScript.parentElement,
-            oauthList: [
-              'vkid'
-            ]
-          })
-          .on(VKID.WidgetEvents.ERROR, vkidOnError)
-          .on(VKID.OAuthListInternalEvents.LOGIN_SUCCESS, function (payload) {
-            const code = payload.code;
-            const deviceId = payload.device_id;
-    
-            VKID.Auth.exchangeCode(code, deviceId)
-              .then(vkidOnSuccess)
-              .catch(vkidOnError);
-          });
+          console.log("Инициализация VKID OAuth...");
+oAuth.render({
+  container: document.currentScript.parentElement,
+  oauthList: ['vkid']
+})
+.on(VKID.WidgetEvents.ERROR, vkidOnError)
+.on(VKID.OAuthListInternalEvents.LOGIN_SUCCESS, function (payload) {
+  console.log("Успешный логин:", payload);
+  const code = payload.code;
+  const deviceId = payload.device_id;
+
+  VKID.Auth.exchangeCode(code, deviceId)
+    .then(vkidOnSuccess)
+    .catch(vkidOnError);
+});
+
         
           function vkidOnSuccess(data) {
             // Обработка полученного результата
