@@ -201,3 +201,10 @@ h2{
     margin: 20px auto;
     min-height: 200px;
   }
+  .comments-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
